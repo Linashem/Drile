@@ -2,7 +2,7 @@ export const routes = {
   home: '/',
   shop: '/shop',
   blog: '/blog',
-  // onePost:'/blog/:postId',
+  onePost: '/blog/:postId',
   aboutUs: '/aboutUs',
   contact: '/contact',
   cart: '/cart',
