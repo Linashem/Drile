@@ -10,7 +10,7 @@
       "imgUrl": "/img/goods/chair1.png"
     },
     {
-      "id": 1,
+      "id": 2,
       "title": "Chair",
       "category": "chair",
       "desc": "The best chair ever",
@@ -19,7 +19,7 @@
       "imgUrl": "/img/goods/chair2.png"
     },
     {
-      "id": 1,
+      "id": 3,
       "title": "Chair",
       "category": "chair",
       "desc": "The best chair ever",
@@ -28,7 +28,7 @@
       "imgUrl": "/img/goods/chair3.png"
     },
     {
-      "id": 1,
+      "id": 4,
       "title": "Chair",
       "category": "chair",
       "desc": "The best chair ever",
@@ -37,21 +37,122 @@
       "imgUrl": "/img/goods/chair4.png"
     },
     {
-      "id": 1,
-      "title": "Chair",
-      "category": "chair",
-      "desc": "The best chair ever",
-      "price": 1000,
-      "imgUrl": "https://images.unsplash.com/photo-1519947486511-46149fa0a254?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80"
-    },
-    {
-      "id": 1,
-      "title": "Chair",
-      "category": "chair",
-      "desc": "The best chair ever",
+      "id": 5,
+      "title": "Sofa",
+      "category": "sofa",
+      "desc": "The best sofa ever",
       "price": 1000,
       "oldPrice": 1200,
-      "imgUrl": "/img/img1.png"
+      "imgUrl": "/img/goods/img5.png"
+    },
+    {
+      "id": 6,
+      "title": "Sofa",
+      "category": "sofa",
+      "desc": "The best sofa ever",
+      "price": 1000,
+      "oldPrice": 1200,
+      "imgUrl": "/img/goods/img6.png"
+    },
+    {
+      "id": 7,
+      "title": "Sofa",
+      "category": "sofa",
+      "desc": "The best sofa ever",
+      "price": 1000,
+      "oldPrice": 1200,
+      "imgUrl": "/img/goods/img7.png"
+    },
+    {
+      "id": 8,
+      "title": "Cabinet",
+      "category": "cabinet",
+      "desc": "The best cabinet ever",
+      "price": 1000,
+      "oldPrice": 1200,
+      "imgUrl": "/img/goods/img8.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Cabinet",
+      "category": "cabinet",
+      "desc": "The best cabinet ever",
+      "price": 1000,
+      "oldPrice": 1200,
+      "imgUrl": "/img/goods/img9.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Cabinet",
+      "category": "cabinet",
+      "desc": "The best cabinet ever",
+      "price": 1000,
+      "oldPrice": 1200,
+      "imgUrl": "/img/goods/img8.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Lamp",
+      "category": "lamp",
+      "desc": "The best lamp ever",
+      "price": 1000,
+      "oldPrice": 1200,
+      "imgUrl": "/img/goods/img10.png"
+    },
+    {
+      "id": 12,
+      "title": "Lamp",
+      "category": "lamp",
+      "desc": "The best lamp ever",
+      "price": 1000,
+      "oldPrice": 1200,
+      "imgUrl": "/img/goods/img11.png"
+    },
+    {
+      "id": 13,
+      "title": "Lamp",
+      "category": "lamp",
+      "desc": "The best lamp ever",
+      "price": 1000,
+      "oldPrice": 1200,
+      "imgUrl": "/img/goods/img12.png"
+    },
+    {
+      "id": 14,
+      "title": "Lamp",
+      "category": "lamp",
+      "desc": "The best lamp ever",
+      "price": 1000,
+      "oldPrice": 1200,
+      "imgUrl": "/img/goods/img13.png"
+    },
+    {
+      "id": 15,
+      "title": "Bed",
+      "category": "bed",
+      "desc": "The best bed ever",
+      "price": 1000,
+      "oldPrice": 1200,
+      "imgUrl": "/img/goods/img14.png"
+    },
+    {
+      "id": 16,
+      "title": "Bed",
+      "category": "bed",
+      "desc": "The best bed ever",
+      "price": 1000,
+      "oldPrice": 1200,
+      "imgUrl": "/img/goods/img15.png"
+    },
+    {
+      "id": 17,
+      "title": "Bed",
+      "category": "bed",
+      "desc": "The best bed ever",
+      "price": 1000,
+      "oldPrice": 1200,
+      "imgUrl": "/img/goods/img14.png"
     }
+    
   ]
 }
