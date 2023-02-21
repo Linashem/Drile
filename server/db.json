@@ -1,0 +1,52 @@
+{
+  "goods": [
+    {
+      "id": 1,
+      "title": "Chair",
+      "category": "chair",
+      "desc": "The best chair ever",
+      "price": 1000,
+      "imgUrl": "/img/goods/chair1.png"
+    },
+    {
+      "id": 1,
+      "title": "Chair",
+      "category": "chair",
+      "desc": "The best chair ever",
+      "price": 1000,
+      "imgUrl": "/img/goods/chair2.png"
+    },
+    {
+      "id": 1,
+      "title": "Chair",
+      "category": "chair",
+      "desc": "The best chair ever",
+      "price": 1000,
+      "imgUrl": "/img/goods/chair3.png"
+    },
+    {
+      "id": 1,
+      "title": "Chair",
+      "category": "chair",
+      "desc": "The best chair ever",
+      "price": 1000,
+      "imgUrl": "/img/goods/chair4.png"
+    },
+    {
+      "id": 1,
+      "title": "Chair",
+      "category": "chair",
+      "desc": "The best chair ever",
+      "price": 1000,
+      "imgUrl": "https://images.unsplash.com/photo-1519947486511-46149fa0a254?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80"
+    },
+    {
+      "id": 1,
+      "title": "Chair",
+      "category": "chair",
+      "desc": "The best chair ever",
+      "price": 1000,
+      "imgUrl": "/img/img1.png"
+    }
+  ]
+}
