@@ -1,22 +1,49 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { ShopItem } from '../../Components/ShopItem';
 import style from './ShopList.module.scss';
 
-type OneGoodType = {
+type GoodsProps = {
+  id: number;
   title: string;
   category: string;
-  price: number;
+  desc: string;
   imgUrl: string;
+  price: number;
+  oldPrice?: number;
 };
 
-export const ShopList = ({ title, category, price, imgUrl }: OneGoodType) => {
+export const ShopList = () => {
+  const [data, setData] = useState<GoodsProps[]>([]);
+
+  const getData = async () => {
+    try {
+      const response = await axios.get<GoodsProps[]>('http://localhost:3001/goods');
+      setData(response.data);
+      console.log(response);
+    } catch (error) {
+      console.log(error, 'err');
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
-    <>
-      <h3>{title} </h3>
-      <p>{category} </p>
-      <span>{price} </span>
-      <div className={style.pic}>
-        <img src={imgUrl} alt="" />
+    <div className={style.wrapper}>
+      <h2 className={style.wrapper_title}>Shop</h2>
+      <div className={style.wrapper_cards}>
+        {data.map((el) => (
+          <ShopItem
+            title={el.title}
+            key={el.id}
+            price={el.price}
+            imgUrl={el.imgUrl}
+            oldPrice={el.oldPrice}
+          />
+        ))}
       </div>
-    </>
+    </div>
   );
 };

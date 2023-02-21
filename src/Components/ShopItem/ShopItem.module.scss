@@ -1,0 +1,149 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  &_card {
+    position: relative;
+    width: 350px;
+    height: 342px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+
+    &_pic {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 155px;
+    }
+    &_discount {
+      position: absolute;
+      top: 30px;
+      right: 0;
+      width: 75px;
+      height: 28px;
+      background: #9e0b0f;
+      font-size: 16px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.count__wrapper {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+}
+
+.count__group,
+.like,
+.cart {
+  width: 38px;
+  height: 38px;
+  border: 0.2px solid #606060;
+}
+
+.count__group {
+  /* border: solid #71B3C6 2px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f1f6f9;
+}
+
+.count_number {
+  max-width: 20px;
+  color: #2a2a2b;
+  padding-left: 3px;
+}
+
+.btn_add {
+  transform: rotate(180deg);
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+.btn_remove {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+.button_box {
+  display: flex;
+  flex-direction: column;
+  padding-right: 2px;
+}
+
+.like,
+.cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_like,
+.btn_cart {
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.product_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #2a2a2b;
+}
+
+.product_info_title {
+  margin: 12px 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #2a2a2b;
+}
+
+.product_info_prices {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  font-size: 14px;
+  color: #8c8c8c;
+}
+
+.price_new {
+  margin: 0;
+}
+
+.price_old {
+  margin: 0;
+  text-decoration: line-through;
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+.product__info--rating {
+  display: flex;
+  gap: 2px;
+}
+

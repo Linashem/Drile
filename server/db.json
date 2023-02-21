@@ -6,6 +6,7 @@
       "category": "chair",
       "desc": "The best chair ever",
       "price": 1000,
+      "oldPrice": 1200,
       "imgUrl": "/img/goods/chair1.png"
     },
     {
@@ -14,6 +15,7 @@
       "category": "chair",
       "desc": "The best chair ever",
       "price": 1000,
+      "oldPrice": 1200,
       "imgUrl": "/img/goods/chair2.png"
     },
     {
@@ -22,6 +24,7 @@
       "category": "chair",
       "desc": "The best chair ever",
       "price": 1000,
+      "oldPrice": 1200,
       "imgUrl": "/img/goods/chair3.png"
     },
     {
@@ -30,6 +33,7 @@
       "category": "chair",
       "desc": "The best chair ever",
       "price": 1000,
+      "oldPrice": 1200,
       "imgUrl": "/img/goods/chair4.png"
     },
     {
@@ -46,6 +50,7 @@
       "category": "chair",
       "desc": "The best chair ever",
       "price": 1000,
+      "oldPrice": 1200,
       "imgUrl": "/img/img1.png"
     }
   ]

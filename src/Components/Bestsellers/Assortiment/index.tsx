@@ -8,7 +8,7 @@ export const AssortSingleSofa = () => {
         imgUrl={'/img/img1.png'}
         imgAlt={'Metal Vintage Pendant'}
         newprice={423}
-        oldprice={529}
+        // oldprice={529}
         title={'Metal Vintage Pendant'}
       />
       <Product

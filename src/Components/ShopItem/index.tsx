@@ -1,28 +1,30 @@
-import { type } from '@testing-library/user-event/dist/type';
 import React, { useState } from 'react';
-import style from './Product.module.scss';
+import style from './ShopItem.module.scss';
 
-type ProductType = {
-  imgUrl: string;
-  imgAlt: string;
-  newprice: number;
-  oldprice?: number;
-  discount?: number;
+type OneGoodType = {
   title: string;
-  count?: number;
+  // category: string;
+  price: number;
+  oldPrice?: number;
+  imgUrl: string;
 };
 
-export const Product = (props: ProductType) => {
-  const { imgUrl, imgAlt, newprice, oldprice, title } = props;
-
-  // const [isActive, setIsActive] = useState(false);
-  // const handleActive = () => {
-  //   setIsActive((prev) => !prev);
-  // };
+export const ShopItem = ({ title, price, imgUrl, oldPrice }: OneGoodType) => {
+  // return (
+  //   <>
+  //     <h3>{title} </h3>
+  //     <p>{category} </p>
+  //     <span>{price} </span>
+  //     <span>{oldPrice} </span>
+  //     <div className={style.pic}>
+  //       <img src={imgUrl} alt={title} />
+  //     </div>
+  //   </>
+  // );
 
   const countDiscount = () => {
-    if (oldprice) {
-      const discount = Math.ceil((newprice / oldprice) * 100) - 100;
+    if (oldPrice) {
+      const discount = Math.ceil((price / oldPrice) * 100) - 100;
       return `${discount}%`;
     }
   };
@@ -68,17 +70,31 @@ export const Product = (props: ProductType) => {
             : (
               <img src="/img/svg/like.svg" alt="" />
             )}
+              {/* {like
+             ? (
+              <img src="/img/svg/like-empty.svg" alt="" />
+            )
+            : (
+              <img src="/img/svg/like.svg" alt="" />
+            )} */}
           </button>
         </div>
         <div className={style.cart}>
           <button className={style.btn_cart} onClick={cartHandler}>
             {cart
-            ? (
+             ? (
               <img src="/img/svg/cart-empty.svg" alt="cart" />
             )
-            : (
+             : (
               <img src="/img/svg/cart-full.svg" alt="cart" />
             )}
+              {/* {cart
+             ? (
+              <img src="/img/svg/cart-empty.svg" alt="cart" />
+            )
+             : (
+              <img src="/img/svg/cart-full.svg" alt="cart" />
+            )} */}
           </button>
         </div>
       </div>
@@ -90,8 +106,8 @@ export const Product = (props: ProductType) => {
       <div className={style.product_info}>
         <h4 className={style.product_info_title}>{title}</h4>
         <div className={style.product_info_prices}>
-          <p className={style.price_new}> £{newprice}</p>
-          <p className={style.price_old}> {oldprice}</p>
+          <p className={style.price_new}> £{price}</p>
+          <p className={style.price_old}> {oldPrice}</p>
         </div>
       </div>
     );
@@ -99,9 +115,9 @@ export const Product = (props: ProductType) => {
   return (
     <div className={style.wrapper}>
       <div className={style.wrapper_card}>
-        <img className={style.wrapper_card_pic} src={imgUrl} alt={imgAlt} />
+        <img className={style.wrapper_card_pic} src={imgUrl} />
         <div className={style.wrapper_card_discount}>
-        {/* <div className={isActive ? style.wrapper_card_discount : ''}> */}
+          {/* <div className={isActive ? style.wrapper_card_discount : ''}> */}
 
           <p>{countDiscount()} </p>
         </div>
