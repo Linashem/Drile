@@ -16,6 +16,9 @@ const cartSlice = createSlice({
     clearCartData() {
       return { ...initialState };
     },
+    // IncrementCart(state, { payload: { cart } }: PayloadAction<{ cart: number }>){
+
+    // }
   },
 });
 

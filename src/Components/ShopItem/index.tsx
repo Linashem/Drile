@@ -19,6 +19,14 @@ export const ShopItem = ({ title, price, imgUrl, oldPrice }: OneGoodType) => {
     }
   };
 
+  const [count, setCount] = useState(0);
+  const incrementHandler = () => {
+    setCount((prev) => prev + 1);
+  };
+  const decrementHandler = () => {
+    setCount((prev) => prev - 1);
+  };
+
   const [like, setLike] = useState(true);
   const likedHandler = () => {
     setLike((prev) => !prev);
@@ -26,15 +34,16 @@ export const ShopItem = ({ title, price, imgUrl, oldPrice }: OneGoodType) => {
   const [cart, setCart] = useState(true);
 
   const dispatch = useDispatch();
-  const CartCount = useSelector(CartSelectors.getCart);
+  // const CartCount = useSelector(CartSelectors.getCart);
 
   const cartHandler = () => {
-    if (cart) {
+    if (count === 0) {
       setCart((prev) => !prev);
       dispatch(CartSliceActions.SetcartData({ cart: 0 }));
+      setCount((prev) => prev + 1);
     } else {
-      setCart((prev) => !prev);
-      dispatch(CartSliceActions.clearCartData());
+      dispatch(CartSliceActions.SetcartData({ cart: 0 }));
+      setCount((prev) => prev + 1);
     }
   };
 
@@ -60,17 +69,27 @@ export const ShopItem = ({ title, price, imgUrl, oldPrice }: OneGoodType) => {
           </button>
         </div>
         <div className={style.cart}>
-            {cart
-            ? (
-              <button className={style.btn_cart} onClick={cartHandler}>
+          {cart
+          ? (
+            <button className={style.btn_cart} onClick={cartHandler}>
               <img src="/img/svg/cart-empty.svg" alt="cart" />
-              </button>
-            )
-            : (
-              // <img src="/img/svg/cart-full.svg" alt="cart" />
-             <Counter/>
-            )}
-            {/* {cart
+            </button>
+          )
+          : (
+            // <img src="/img/svg/cart-full.svg" alt="cart" />
+            <div className={style.count__group}>
+              <p className={style.count_number}>{count}</p>
+              <div className={style.button_box}>
+                <button className={style.btn_add} onClick={cartHandler}>
+                  <img src="/img/svg/count-btn.svg" alt="btn" />
+                </button>
+                {/* <button className={style.btn_remove} onClick={decrementHandler} disabled={count === 0}>
+                  <img src="/img/svg/count-btn.svg" alt="btn" />
+                </button> */}
+              </div>
+            </div>
+          )}
+          {/* {cart
              ? (
               <img src="/img/svg/cart-empty.svg" alt="cart" />
             )
