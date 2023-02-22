@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { routes } from '../../../Helper/Conatants/routes';
-import { UserSelectors, UserSliceActions } from '../../../Store';
+import { CartSelectors, CartSliceActions, UserSelectors, UserSliceActions } from '../../../Store';
 import style from './Header.module.scss';
 
 export const Header = () => {
@@ -11,6 +11,11 @@ export const Header = () => {
   const logoutHandler = () => {
     dispatch(UserSliceActions.clearUserData());
   };
+  const CartCount = useSelector(CartSelectors.getCart);
+  // const cartCountHendler = () => {
+  //   dispatch(CartSliceActions.SetcartData);
+  // };
+
   return (
     <header className={style.header}>
       <Link to={routes.home}>
@@ -44,12 +49,28 @@ export const Header = () => {
         </ul>
       </nav>
       <div className={style.header_navbar}>
-        <Link to={routes.cart}>
-          <img src="/img/svg/cart.svg" alt="" />
-        </Link>
+        {CartCount
+         ? (
+          <>
+            <p>{CartCount}</p>
+            <Link to={routes.cart}>
+              <img src="/img/svg/cart.svg" alt="" />
+            </Link>
+          </>
+        )
+        : (
+          <Link to={routes.cart}>
+            <img src="/img/svg/cart.svg" alt="" />
+          </Link>
+        )}
+
         {UserEmail
         ? (
-           <span>{UserEmail}</span>)
+          <>
+            <span>{UserEmail}</span>
+            <button onClick={logoutHandler}>Logout </button>
+          </>
+        )
         : (
           <Link to={routes.auth}>
             <img src="/img/svg/auth.svg" alt="" />

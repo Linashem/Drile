@@ -1,27 +1,17 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { CartSelectors, CartSliceActions, UserSelectors } from '../../Store';
+import { Counter } from '../Counter';
 import style from './ShopItem.module.scss';
 
 type OneGoodType = {
   title: string;
-  // category: string;
   price: number;
   oldPrice?: number;
   imgUrl: string;
 };
 
 export const ShopItem = ({ title, price, imgUrl, oldPrice }: OneGoodType) => {
-  // return (
-  //   <>
-  //     <h3>{title} </h3>
-  //     <p>{category} </p>
-  //     <span>{price} </span>
-  //     <span>{oldPrice} </span>
-  //     <div className={style.pic}>
-  //       <img src={imgUrl} alt={title} />
-  //     </div>
-  //   </>
-  // );
-
   const countDiscount = () => {
     if (oldPrice) {
       const discount = Math.ceil((price / oldPrice) * 100) - 100;
@@ -29,48 +19,38 @@ export const ShopItem = ({ title, price, imgUrl, oldPrice }: OneGoodType) => {
     }
   };
 
-  const [count, setCount] = useState(0);
-  const incrementHandler = () => {
-    setCount((prev) => prev + 1);
-  };
-  const decrementHandler = () => {
-    setCount((prev) => prev - 1);
-  };
-
   const [like, setLike] = useState(true);
   const likedHandler = () => {
     setLike((prev) => !prev);
   };
   const [cart, setCart] = useState(true);
+
+  const dispatch = useDispatch();
+  const CartCount = useSelector(CartSelectors.getCart);
+
   const cartHandler = () => {
-    setCart((prev) => !prev);
+    if (cart) {
+      setCart((prev) => !prev);
+      dispatch(CartSliceActions.SetcartData({ cart: 0 }));
+    } else {
+      setCart((prev) => !prev);
+      dispatch(CartSliceActions.clearCartData());
+    }
   };
 
   const CountWrapper = () => {
     return (
       <div className={style.count__wrapper}>
-        <div className={style.count__group}>
-          <p className={style.count_number}>{count}</p>
-          <div className={style.button_box}>
-            <button className={style.btn_add} onClick={incrementHandler}>
-              <img src="/img/svg/count-btn.svg" alt="btn" />
-            </button>
-            <button className={style.btn_remove} onClick={decrementHandler} disabled={count === 0}>
-              <img src="/img/svg/count-btn.svg" alt="btn" />
-            </button>
-          </div>
-        </div>
-
         <div className={style.like}>
           <button className={style.btn_like} onClick={likedHandler}>
-            {like
+          {like
              ? (
               <img src="/img/svg/like-empty.svg" alt="" />
             )
             : (
               <img src="/img/svg/like.svg" alt="" />
             )}
-              {/* {like
+            {/* {like
              ? (
               <img src="/img/svg/like-empty.svg" alt="" />
             )
@@ -80,22 +60,23 @@ export const ShopItem = ({ title, price, imgUrl, oldPrice }: OneGoodType) => {
           </button>
         </div>
         <div className={style.cart}>
-          <button className={style.btn_cart} onClick={cartHandler}>
             {cart
-             ? (
+            ? (
+              <button className={style.btn_cart} onClick={cartHandler}>
               <img src="/img/svg/cart-empty.svg" alt="cart" />
+              </button>
             )
-             : (
-              <img src="/img/svg/cart-full.svg" alt="cart" />
+            : (
+              // <img src="/img/svg/cart-full.svg" alt="cart" />
+             <Counter/>
             )}
-              {/* {cart
+            {/* {cart
              ? (
               <img src="/img/svg/cart-empty.svg" alt="cart" />
             )
              : (
               <img src="/img/svg/cart-full.svg" alt="cart" />
             )} */}
-          </button>
         </div>
       </div>
     );
