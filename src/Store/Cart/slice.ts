@@ -10,8 +10,11 @@ const cartSlice = createSlice({
   name: 'cartSlice',
   initialState,
   reducers: {
-    SetcartData(state, { payload: { cart } }: PayloadAction<{ cart: number }>) {
+    IncrementCart(state, { payload: { cart } }: PayloadAction<{ cart: number }>) {
       state.cart += 1;
+    },
+    DecrementCart(state, { payload: { cart } }: PayloadAction<{ cart: number }>) {
+      state.cart -= 1;
     },
     clearCartData() {
       return { ...initialState };
