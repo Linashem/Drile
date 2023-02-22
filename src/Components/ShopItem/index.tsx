@@ -56,9 +56,10 @@ export const ShopItem = ({ title, price, imgUrl, oldPrice }: OneGoodType) => {
       <div className={style.count__wrapper}>
         <div className={style.like}>
           <button className={style.btn_like} onClick={likedHandler}>
-            {like ? (
-              <img src="/img/svg/like-empty.svg" alt="" />
-            ) : (
+            {like
+            ? (
+              <img src="/img/svg/like-empty.svg" alt="" />)
+            : (
               <img src="/img/svg/like.svg" alt="" />
             )}
             {/* {like
@@ -71,11 +72,13 @@ export const ShopItem = ({ title, price, imgUrl, oldPrice }: OneGoodType) => {
           </button>
         </div>
         <div className={style.cart}>
-          {cart ? (
+          {cart
+          ? (
             <button className={style.btn_cart} onClick={cartImcrementHandler}>
               <img src="/img/svg/cart-empty.svg" alt="cart" />
             </button>
-          ) : (
+          )
+          : (
             // <img src="/img/svg/cart-full.svg" alt="cart" />
             <div className={style.count__group}>
               <p className={style.count_number}>{count}</p>
