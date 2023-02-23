@@ -41,6 +41,7 @@ export const ShopList = () => {
             price={el.price}
             imgUrl={el.imgUrl}
             oldPrice={el.oldPrice}
+            id={el.id}
           />
         ))}
       </div>

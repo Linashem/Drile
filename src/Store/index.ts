@@ -5,3 +5,5 @@ export * as PostEffect from './Posts/effects';
 export * as PostSelectors from './Posts/selectors';
 export { CartSliceActions } from './Cart/slice';
 export * as CartSelectors from './Cart/selectors';
+export * as GoodSelectors from './Goods/selectors';
+export * as GoodEffect from './Goods/effects';

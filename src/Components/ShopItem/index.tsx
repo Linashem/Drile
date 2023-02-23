@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { CartSelectors, CartSliceActions, UserSelectors } from '../../Store';
 import { Counter } from '../Counter';
 import style from './ShopItem.module.scss';
@@ -9,9 +10,10 @@ type OneGoodType = {
   price: number;
   oldPrice?: number;
   imgUrl: string;
+  id: number;
 };
 
-export const ShopItem = ({ title, price, imgUrl, oldPrice }: OneGoodType) => {
+export const ShopItem = ({ title, price, imgUrl, oldPrice, id }: OneGoodType) => {
   const countDiscount = () => {
     if (oldPrice) {
       const discount = Math.ceil((price / oldPrice) * 100) - 100;
@@ -56,9 +58,10 @@ export const ShopItem = ({ title, price, imgUrl, oldPrice }: OneGoodType) => {
       <div className={style.count__wrapper}>
         <div className={style.like}>
           <button className={style.btn_like} onClick={likedHandler}>
-            {like
-            ? (
-              <img src="/img/svg/like-empty.svg" alt="" />)
+          {like
+             ? (
+              <img src="/img/svg/like-empty.svg" alt="" />
+            )
             : (
               <img src="/img/svg/like.svg" alt="" />
             )}
@@ -73,12 +76,12 @@ export const ShopItem = ({ title, price, imgUrl, oldPrice }: OneGoodType) => {
         </div>
         <div className={style.cart}>
           {cart
-          ? (
+           ? (
             <button className={style.btn_cart} onClick={cartImcrementHandler}>
               <img src="/img/svg/cart-empty.svg" alt="cart" />
             </button>
           )
-          : (
+           : (
             // <img src="/img/svg/cart-full.svg" alt="cart" />
             <div className={style.count__group}>
               <p className={style.count_number}>{count}</p>
@@ -111,7 +114,7 @@ export const ShopItem = ({ title, price, imgUrl, oldPrice }: OneGoodType) => {
   const Info = () => {
     return (
       <div className={style.product_info}>
-        <h4 className={style.product_info_title}>{title}</h4>
+       <Link to={`/shop/${id}`}> <h4 className={style.product_info_title}>{title}</h4></Link>
         <div className={style.product_info_prices}>
           <p className={style.price_new}> £{price}</p>
           <p className={style.price_old}> {oldPrice}</p>
