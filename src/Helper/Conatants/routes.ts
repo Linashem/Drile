@@ -1,6 +1,8 @@
 export const routes = {
-  home: '/',
-  shop: '/shop',
+  // home: '/',
+  shop: '/',
+  // shop: '/shop',
+
   oneGood: '/shop/:goodId',
 
   blog: '/blog',

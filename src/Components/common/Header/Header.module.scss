@@ -27,5 +27,11 @@
   &_navbar {
     display: flex;
     gap: 40px;
+    align-items: center;
+
+    &_cart_wrapper{
+      display: flex;
+      align-items: center;
+    }
   }
 }

@@ -12,7 +12,7 @@ export const Auth = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     if (token) {
-      navigate(routes.home);
+      navigate(routes.shop);
       dispatch(UserSliceActions.setUserLoading(false));
     }
   }, [token]);

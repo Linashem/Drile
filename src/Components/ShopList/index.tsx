@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { ShopItem } from '../../Components/ShopItem';
+// import { Pagination } from '../Pagination';
+import { Pagination } from 'antd';
 import style from './ShopList.module.scss';
 
 type GoodsProps = {
@@ -16,14 +18,15 @@ type GoodsProps = {
 export const ShopList = () => {
   const [data, setData] = useState<GoodsProps[]>([]);
   const [value, setValue] = useState('');
-  const [currentPage, setcurrentPage] = useState(0);
-  const [pageLimit, setpageLimit] = useState(6);
+  const [goodsPerPage] = useState(6);
+  const [total, setTotal] = useState(0);
+  const [page, setPage] = useState(1);
 
- 
   const getData = async () => {
     try {
       const response = await axios.get<GoodsProps[]>('http://localhost:3001/goods');
       setData(response.data);
+      setTotal(response.data.length);
       console.log(response);
     } catch (error) {
       console.log(error, 'err');
@@ -33,6 +36,10 @@ export const ShopList = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  const lastGoodIndex = page + goodsPerPage;
+  const firstGoodInex = lastGoodIndex - goodsPerPage;
+  const curentGood = data.slice(firstGoodInex, lastGoodIndex);
 
   const handleReset = () => {
     getData();
@@ -47,7 +54,7 @@ export const ShopList = () => {
       })
       .catch((err) => console.log(err, 'err'));
   };
-  const handleFilter = async (value) => {
+  const handleFilter = async (value: string) => {
     return await axios
       .get(`http://localhost:3001/goods?category=${value}`)
       .then((response) => {
@@ -61,6 +68,20 @@ export const ShopList = () => {
       <div className={style.wrapper}>
         <h2 className={style.wrapper_title}>Shop</h2>
         <div>
+          <form onSubmit={handleSearch}>
+            <input
+              type="text"
+              placeholder="Search..."
+              value={value}
+              onChange={(e: any) => {
+                setValue(e.target.value);
+              }}
+            />
+            <div>
+              <button type="submit">Search</button>
+              <button onClick={() => handleReset()}>Reset</button>
+            </div>
+          </form>
           <button onClick={() => handleFilter('dressingtable')}>DRESSING TABLE</button>
           <button onClick={() => handleFilter('lamp')}>LAMP</button>
           <button onClick={() => handleFilter('cabinet')}>CABINET</button>
@@ -68,22 +89,8 @@ export const ShopList = () => {
           <button onClick={() => handleFilter('chair')}>CHAIR</button>
           <button onClick={() => handleFilter('bed')}>BED</button>
         </div>
-        <form onSubmit={handleSearch}>
-          <input
-            type="text"
-            placeholder="Search..."
-            value={value}
-            onChange={(e) => {
-              setValue(e.target.value);
-            }}
-          />
-          <div>
-            <button type="submit">Search</button>
-            <button onClick={() => handleReset()}>Reset</button>
-          </div>
-        </form>
         <div className={style.wrapper_cards}>
-          {data.map((el) => (
+          {curentGood.map((el) => (
             <ShopItem
               title={el.title}
               key={el.id}
@@ -95,6 +102,12 @@ export const ShopList = () => {
           ))}
         </div>
       </div>
+      <Pagination
+        onChange={(value) => setPage(value)}
+        pageSize={goodsPerPage}
+        total={total}
+        current={page}
+      />
     </>
   );
 };

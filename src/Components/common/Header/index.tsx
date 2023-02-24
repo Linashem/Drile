@@ -12,13 +12,10 @@ export const Header = () => {
     dispatch(UserSliceActions.clearUserData());
   };
   const CartCount = useSelector(CartSelectors.getCart);
-  // const cartCountHendler = () => {
-  //   dispatch(CartSliceActions.SetcartData);
-  // };
 
   return (
     <header className={style.header}>
-      <Link to={routes.home}>
+      <Link to={routes.shop}>
         <div>
           <img src="/img/svg/logo.svg" alt="" />
         </div>
@@ -27,9 +24,6 @@ export const Header = () => {
       <nav>
         <ul className={style.header_list}>
           <li className={style.header_list_item}>
-            <Link className={style.header_list_item_link} to={routes.home}>
-              Home
-            </Link>
           </li>
           <li className={style.header_list_item}>
             <Link className={style.header_list_item_link} to={routes.shop}>
@@ -52,10 +46,12 @@ export const Header = () => {
         {CartCount
          ? (
           <>
+          <div className={style.header_navbar_cart_wrapper}>
             <p>{CartCount}</p>
             <Link to={routes.cart}>
               <img src="/img/svg/cart.svg" alt="" />
             </Link>
+            </div>
           </>
         )
         : (

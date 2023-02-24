@@ -14,9 +14,9 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path={routes.home} element={<Pagewrapper />}>
-          <Route index element={<Home />} />
-          <Route path={routes.shop} element={<Shop />} />
+        <Route path={routes.shop} element={<Pagewrapper />}>
+          <Route index element={<Shop />} />
+          {/* <Route path={routes.shop} element={<Shop />} /> */}
           <Route path={routes.oneGood} element={<OneGood />} />
 
           <Route path={routes.auth} element={<Auth />} />
