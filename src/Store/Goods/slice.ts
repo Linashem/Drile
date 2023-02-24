@@ -9,7 +9,7 @@ const initialState = {
   // good: [] as OneGoodType[],
   loading: false,
   error: {},
-  oneGood: { id: 0, title: '', imgUrl: '' },
+  oneGood: { id: 0, title: '', imgUrl: '', desc: '' },
 };
 
 const goodSlice = createSlice({

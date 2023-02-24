@@ -29,6 +29,10 @@
     "indent": "off",
     "@typescript-eslint/indent": "off",
     "no-redeclare": "off",
-    "@typescript-eslint/no-redeclare": "off"
+    "@typescript-eslint/no-redeclare": "off",
+    "@typescript-eslint/no-confusing-void-expression": "off",
+    "@typescript-eslint/no-misused-promises": "off",
+    "@typescript-eslint/promise-function-async": "off"
+    
   }
 }

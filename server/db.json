@@ -137,6 +137,42 @@
     },
     {
       "id": 16,
+      "title": "Hironpal Dressing Table",
+      "category": "dressingtable",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget hendrerit odio, non ultrices lorem. Donec vel vestibulum eros. Curabitur fringilla arcu varius.",
+      "price": 1000,
+      "oldPrice": 1200,
+      "imgUrl": "/img/goods/img16.png"
+    },
+    {
+      "id": 17,
+      "title": "Hironpal Dressing Table",
+      "category": "dressingtable",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget hendrerit odio, non ultrices lorem. Donec vel vestibulum eros. Curabitur fringilla arcu varius.",
+      "price": 1000,
+      "oldPrice": 1200,
+      "imgUrl": "/img/goods/img17.png"
+    },
+    {
+      "id": 18,
+      "title": "Adkins Dressing Table",
+      "category": "dressingtable",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget hendrerit odio, non ultrices lorem. Donec vel vestibulum eros. Curabitur fringilla arcu varius.",
+      "price": 1000,
+      "oldPrice": 1200,
+      "imgUrl": "/img/goods/img18.png"
+    },
+    {
+      "id": 19,
+      "title": "Hironpal Dressing Table",
+      "category": "dressingtable",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget hendrerit odio, non ultrices lorem. Donec vel vestibulum eros. Curabitur fringilla arcu varius.",
+      "price": 1000,
+      "oldPrice": 1200,
+      "imgUrl": "/img/goods/img19.png"
+    },
+    {
+      "id": 20,
       "title": "Bed",
       "category": "bed",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget hendrerit odio, non ultrices lorem. Donec vel vestibulum eros. Curabitur fringilla arcu varius.",
@@ -145,13 +181,40 @@
       "imgUrl": "/img/goods/img15.png"
     },
     {
-      "id": 17,
-      "title": "Bed",
-      "category": "bed",
+      "id": 21,
+      "title": "Metal Vintage Pendant",
+      "category": "lamp",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget hendrerit odio, non ultrices lorem. Donec vel vestibulum eros. Curabitur fringilla arcu varius.",
       "price": 1000,
       "oldPrice": 1200,
-      "imgUrl": "/img/goods/img14.png"
+      "imgUrl": "/img/goods/img20.png"
+    },
+    {
+      "id": 22,
+      "title": "Arne Dining Chair",
+      "category": "chair",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget hendrerit odio, non ultrices lorem. Donec vel vestibulum eros. Curabitur fringilla arcu varius.",
+      "price": 1000,
+      "oldPrice": 1200,
+      "imgUrl": "/img/goods/img21.png"
+    },
+    {
+      "id": 23,
+      "title": "Modern Outdoor Chair",
+      "category": "chair",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget hendrerit odio, non ultrices lorem. Donec vel vestibulum eros. Curabitur fringilla arcu varius.",
+      "price": 1000,
+      "oldPrice": 1200,
+      "imgUrl": "/img/goods/img22.png"
+    },
+    {
+      "id": 24,
+      "title": "Modern Bedroom Storage",
+      "category": "chair",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget hendrerit odio, non ultrices lorem. Donec vel vestibulum eros. Curabitur fringilla arcu varius.",
+      "price": 1000,
+      "oldPrice": 1200,
+      "imgUrl": "/img/goods/img23.png"
     }
     
   ]

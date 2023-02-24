@@ -15,5 +15,5 @@ export const OneGood = () => {
     }
   }, [goodId]);
 
-  return <OneGoodContent title={goodData.title} imgUrl={goodData.imgUrl} />;
+  return <OneGoodContent title={goodData.title} imgUrl={goodData.imgUrl} desc={goodData.desc} />;
 };
