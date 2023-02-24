@@ -1,5 +1,4 @@
 import React from 'react';
-import { Home } from './Containers/Home';
 import { Routes, Route } from 'react-router-dom';
 import { routes } from './Helper/Conatants/routes';
 import { Pagewrapper } from './Components/common/PageWrapper';
