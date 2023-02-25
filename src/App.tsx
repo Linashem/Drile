@@ -8,6 +8,7 @@ import { Auth } from './Containers/Auth';
 import { Blog } from './Containers/Blog';
 import { OnePost } from './Containers/OnePost';
 import { OneGood } from './Containers/OneGood';
+import { Cart } from './Containers/Cart';
 
 function App() {
   return (
@@ -15,9 +16,8 @@ function App() {
       <Routes>
         <Route path={routes.shop} element={<Pagewrapper />}>
           <Route index element={<Shop />} />
-          {/* <Route path={routes.shop} element={<Shop />} /> */}
           <Route path={routes.oneGood} element={<OneGood />} />
-
+          <Route path={routes.cart} element={<Cart/>} />
           <Route path={routes.auth} element={<Auth />} />
           <Route path={routes.blog} element={<Blog />} />
           <Route path={routes.onePost} element={<OnePost />} />

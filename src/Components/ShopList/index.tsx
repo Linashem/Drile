@@ -37,7 +37,7 @@ export const ShopList = () => {
     getData();
   }, []);
 
-  const lastGoodIndex = page + goodsPerPage;
+  const lastGoodIndex = page * goodsPerPage;
   const firstGoodInex = lastGoodIndex - goodsPerPage;
   const curentGood = data.slice(firstGoodInex, lastGoodIndex);
 
