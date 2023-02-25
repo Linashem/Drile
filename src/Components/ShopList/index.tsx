@@ -67,8 +67,8 @@ export const ShopList = () => {
     <>
       <div className={style.wrapper}>
         <h2 className={style.wrapper_title}>Shop</h2>
-        <div>
-          <form onSubmit={handleSearch}>
+        <div className={style.wrapper_forms}>
+          <form className={style.wrapper_forms_search} onSubmit={handleSearch}>
             <input
               type="text"
               placeholder="Search..."
@@ -77,17 +77,19 @@ export const ShopList = () => {
                 setValue(e.target.value);
               }}
             />
-            <div>
+            <div className={style.wrapper_forms_search_btn}>
               <button type="submit">Search</button>
               <button onClick={() => handleReset()}>Reset</button>
             </div>
           </form>
-          <button onClick={() => handleFilter('dressingtable')}>DRESSING TABLE</button>
-          <button onClick={() => handleFilter('lamp')}>LAMP</button>
-          <button onClick={() => handleFilter('cabinet')}>CABINET</button>
-          <button onClick={() => handleFilter('sofa')}>SOFA</button>
-          <button onClick={() => handleFilter('chair')}>CHAIR</button>
-          <button onClick={() => handleFilter('bed')}>BED</button>
+          <div className={style.wrapper_category_btn_row}>
+            <button className={style.wrapper_category_btn_row_btn} onClick={() => handleFilter('dressingtable')}>DRESSING TABLE</button>
+            <button className={style.wrapper_category_btn_row_btn} onClick={() => handleFilter('lamp')}>LAMP</button>
+            <button className={style.wrapper_category_btn_row_btn} onClick={() => handleFilter('cabinet')}>CABINET</button>
+            <button className={style.wrapper_category_btn_row_btn} onClick={() => handleFilter('sofa')}>SOFA</button>
+            <button className={style.wrapper_category_btn_row_btn} onClick={() => handleFilter('chair')}>CHAIR</button>
+            <button className={style.wrapper_category_btn_row_btn} onClick={() => handleFilter('bed')}>BED</button>
+          </div>
         </div>
         <div className={style.wrapper_cards}>
           {curentGood.map((el) => (
